@@ -1,11 +1,14 @@
 <script setup>
-
+import { AGDefaultLayout } from '@ui'
+import { AGHeader } from '@widgets'
 </script>
 
 <template>
-  <div class="">
-    home
-  </div>
+  <a-g-default-layout>
+    <template #header>
+      <a-g-header/>
+    </template>
+  </a-g-default-layout>
 </template>
 
 <style scoped>

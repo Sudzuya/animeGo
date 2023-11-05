@@ -1,5 +1,4 @@
 @use "sass:math";
-@use "main";
 //Percent
 @function percent($px, $from) {
     $result: math.div($px, $from) * 100%;
@@ -31,7 +30,7 @@
 }
 
 // Адаптивное свойство (clamp)
-@mixin adaptiveValue($property, $startSize, $minSize, $keepSize: 0, $widthFrom: main.$containerWidth, $widthTo: main.$minWidth) {
+@mixin adaptiveValue($property, $startSize, $minSize, $keepSize: 0, $widthFrom: $containerWidth, $widthTo: $minWidth) {
     @if ($startSize==0) {
         $startSize: 0.000001;
     }
@@ -42,8 +41,8 @@
     // Для calc();
     $addSize: math.div($startSize - $minSize, 16);
 
-    @if ($widthFrom == main.$containerWidth and main.$maxWidthContainer == 0) {
-        $widthFrom: main.$maxWidth;
+    @if ($widthFrom == $containerWidth and $maxWidthContainer == 0) {
+        $widthFrom: $maxWidth;
     }
 
     // Брейк-пойнт в EM

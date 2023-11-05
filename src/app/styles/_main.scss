@@ -26,14 +26,23 @@ $mobileSmall: em(479.98); // Телефоны S
 // 2 = по брейк - поинту (контейнер меняет свою ширину по брейк-поинту)
 $responsiveType: 1;
 
+
+body {
+    color: $main-color;
+    line-height: 1;
+    font-family: $font-family, sans-serif;
+    font-size: $font-size;
+    background-color: $main-bg;
+    //text-rendering: optimizeLegibility;
+    -ms-text-size-adjust: 100%;
+    -moz-text-size-adjust: 100%;
+    -webkit-text-size-adjust: 100%;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
 // Ограничивающий контейнер ==========================================================================================
 
-/*
-(I) стили будут применяться к
-всех классов, содержащих * __container
-Например header__container, main__container и т.п.
-Снипет (HTML): cnt
-*/
 @if ($responsiveType==1) {
     // Отзывчивая
     [class*="__container"] {

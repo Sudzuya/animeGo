@@ -10,17 +10,17 @@ export default defineConfig({
   server: {
     host: true
   },
-  // css: {
-  //   preprocessorOptions: {
-  //     scss: {
-  //       additionalData: `
-  //                 @import "./src/app/styles/_mixins.scss";
-  //                 @import "./src/app/styles/_variables.scss";
-  //                 @import "./src/app/styles/_null.scss";
-  //               `
-  //     }
-  //   }
-  // },
+  css: {
+    preprocessorOptions: {
+      scss: {
+        additionalData: `
+                  @import "./src/app/styles/_mixins.scss";
+                  @import "./src/app/styles/_variables.scss";
+                  @import "./src/app/styles/_null.scss";
+                `
+      }
+    }
+  },
   resolve: {
     alias: [
       {find: '@', replacement: fileURLToPath(new URL('./src', import.meta.url))},
